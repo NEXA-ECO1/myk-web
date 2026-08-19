@@ -1,0 +1,6 @@
+const themeBtn=document.querySelector('#themeBtn');const randomBtn=document.querySelector('#randomBtn');const playBtn=document.querySelector('#playBtn');const saveBtn=document.querySelector('#saveBtn');const input=document.querySelector('#memoryInput');const saved=document.querySelector('#saved');
+const memories=['صدای وصل شدن مودم و آن انتظار عجیب برای وصل شدن اینترنت.','صبح‌های تابستان و کارتون‌هایی که قبل از رفتن به بیرون می‌دیدیم.','آن لحظه‌ای که CD بازی را فوت می‌کردیم و امیدوار بودیم این بار اجرا شود.','وقتی برای فرستادن یک پیامک چند بار متن را می‌خواندیم که هزینه اضافه نداشته باشد.','عصرهای طولانی با دوستان، بدون اینکه کسی دنبال گوشی‌اش بگردد.'];
+themeBtn.addEventListener('click',()=>{document.body.classList.toggle('dark');themeBtn.textContent=document.body.classList.contains('dark')?'☀':'☾'});
+randomBtn.addEventListener('click',()=>{const text=memories[Math.floor(Math.random()*memories.length)];alert('✦ خاطره امروز\n\n'+text)});
+playBtn.addEventListener('click',()=>{playBtn.textContent=playBtn.textContent==='▶'?'Ⅱ':'▶'});
+saveBtn.addEventListener('click',()=>{const value=input.value.trim();if(!value){saved.textContent='اول یک خاطره بنویس :)';return}saved.textContent='✦ خاطره‌ات ثبت شد: «'+value+'»';input.value=''});
